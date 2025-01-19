@@ -2,37 +2,11 @@ import { Layout, Menu, MenuProps } from "antd";
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import { createElement } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { adminSidebarItems } from "../../routes/admin.routes";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps['items'] = [
-  {
-    key:"Dashboard",
-    label:<NavLink to={"/admin/dashboard"}>Dashboard</NavLink>,
-  },
-  {
-    key:"2",
-    label:"nav 2",
-  },
-  {
-    key:"User Management",
-    label:"User Management",
-    children:[
-      {
-        key:"Create Admin",
-        label:<NavLink to={"/admin/craete-admin"}>Create Admin</NavLink>,
-      },
-      {
-        key:"Craete Student",
-        label:<NavLink to={"/admin/craete-student"}>Craete Student</NavLink>,
-      },
-      {
-        key:"Create Faculty",
-        label:<NavLink to={"/admin/craete-faculty"}>Create Faculty</NavLink>,
-      },
-    ]
-  },
-]
+const items: MenuProps['items'] = adminSidebarItems;
 
 export const MainLayout = () => {
   return (
