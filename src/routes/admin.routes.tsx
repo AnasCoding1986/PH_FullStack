@@ -1,8 +1,15 @@
 import { ReactNode } from "react";
+import { NavLink } from "react-router-dom";
 
 type TRoute = {
     path:string;
     element:ReactNode;
+}
+
+type TSidebarItem = {
+    key:string;
+    label:ReactNode;
+    children?:TSidebarItem[];
 }
 
 export const adminPaths = [
@@ -73,4 +80,27 @@ export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   
     return acc;
   }, []);
+
+  export const adminSidebarItems = adminPaths.reduce((acc: TSidebarItem[], item) => {
+    // Add top-level items with a path and name
+    if (item.path && item.name) {
+      acc.push({
+        key: item.name,
+        label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>,
+      });
+    }
   
+    // Add items with children
+    if (item.children) {
+      acc.push({
+        key: item.name,
+        label: item.name,
+        children: item.children.map((child) => ({
+          key: child.name,
+          label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>,
+        })),
+      });
+    }
+  
+    return acc;
+  }, []);
