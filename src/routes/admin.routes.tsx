@@ -11,7 +11,7 @@ export const adminPaths2 = [
     },
     {
         name: "User Management",
-        chilfren: [
+        children: [
             {
                 name: "Create Admin",
                 path: "/admin/craete-admin",
