@@ -2,7 +2,8 @@ import { Layout, Menu, MenuProps } from "antd";
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import { createElement } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { adminSidebarItems } from "../../routes/admin.routes";
+import { adminPaths, adminSidebarItems } from "../../routes/admin.routes";
+import { sidebarItemsGenerator } from "../../utils/sideBarItemsGenerator";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -25,7 +26,7 @@ export const MainLayout = () => {
         <div style={{color:'white', textAlign:'center', alignItems:'center', height:'4rem', display:'flex', justifyContent:'center'}}>
           <h1>PH University</h1>
         </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]} items={items} />
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]} items={sidebarItemsGenerator(adminPaths,"admin")} />
       </Sider>
       <Layout>
         <Header style={{ padding: 0 }} />
