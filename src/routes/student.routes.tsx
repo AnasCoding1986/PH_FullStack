@@ -1,8 +1,8 @@
 import OfferedCourse from "../pages/student/OfferedCourse";
-import StudentDashBoard from "../pages/student/studentDashBoard";
+import StudentDashBoard from "../pages/student/StudentDashBoard";
 
 
-export const facultyPaths = [
+export const studentPaths = [
   {
     name: "Dashboard",
     path: "dashboard",

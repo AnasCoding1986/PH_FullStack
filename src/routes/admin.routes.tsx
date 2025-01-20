@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
+import AdminDashBoard from "../pages/admin/AdminDashBoard";
+import CreateAdmin from "../pages/admin/CreateAdmin";
+import CreateStudent from "../pages/admin/CreateStudent";
+import CreateFaculty from "../pages/admin/CreateFaculty";
 
 type TRoute = {
     path:string;
@@ -16,7 +20,7 @@ export const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
-    element: "ADMIN_DASHBOARD",
+    element: <AdminDashBoard></AdminDashBoard>,
   },
   {
     name: "User Management",
@@ -24,17 +28,17 @@ export const adminPaths = [
       {
         name: "Create Admin",
         path: "create-admin",
-        element: "CREATE_ADMIN",
+        element: <CreateAdmin></CreateAdmin>,
       },
       {
         name: "Create Student",
         path: "create-student",
-        element: "CREATE_STUDENT",
+        element: <CreateStudent></CreateStudent>,
       },
       {
         name: "Create Faculty",
         path: "create-faculty",
-        element: "CREATE_FACULTY",
+        element: <CreateFaculty></CreateFaculty>,
       },
     ],
   },
