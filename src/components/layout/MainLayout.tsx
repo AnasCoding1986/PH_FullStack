@@ -12,13 +12,13 @@ import Sidebar from "./Sidebar";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps["items"] = adminSidebarItems;
+// const items: MenuProps["items"] = adminSidebarItems;
 
 export const MainLayout = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sidebar></Sidebar>
-      <Layout>
+      <Layout >
         <Header style={{ padding: 0 }} />
         <Content style={{ margin: "24px 16px 0" }}>
           <div
